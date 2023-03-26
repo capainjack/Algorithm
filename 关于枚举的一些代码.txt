@@ -1,0 +1,126 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main() {
+	int sum = 0, tmp = 0;
+	for (int i = 1; i <= 100; i++) {
+		tmp += i;
+		sum += tmp;
+
+	}
+
+	printf("%d/n", sum);
+
+	return 0;
+}
+
+ int f1(int x) {
+	if (x= 1)
+	{
+		return 0;
+	}
+	else {
+		return x * f1(x - 1);
+	}
+}
+int main() {
+	int n = 0;
+	scanf("%d", &n);
+	int i = f1(n);
+	printf("%d\n", i);
+	return 0;
+}
+int main() {
+	int i = 0;
+	int n = 0;
+	int set =1;
+	scanf("%d", &n);
+	for (i = 1; i <= n; i++) {
+		set = set * i;
+	}
+	printf("%d\n", set);
+	return 0;
+}
+void f1(int i, int j) {
+	if (i > j) {
+		return;
+	}
+	else {
+		printf("%d\n", i);
+	}
+}
+int main() {
+	int x=0;
+	int y=0;
+	int i = 0;
+	scanf("%d", &x);
+	scanf("%d", &y);
+	int m = y - x;
+	for (i = 0; i <= m; i++) {
+		f1(x+i, y);
+	}
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main() {
+	int tot = 0;
+	for (int i = 0; i <= 100; i++) {
+		if (i - (i % 10 * 10 + i / 10) == 27) {
+			tot++;
+		}
+	}
+	printf("%d\n", tot);
+	return 0;
+}
+
+
+
+
+
+int main() {
+	int p = 0;
+	for (int i = 100; i <= 999; i++) {
+		int a = i%10;
+		int b = i / 10 % 10;
+		int c = i / 100;
+		a = a * a * a;
+		b = b * b * b;
+		c = c * c * c;
+		if (i = a+b+c){
+			p++;
+			}
+	}
+	printf("%d\n", p);
+	return 0;
+}
+
+
+
+#include<iostream>
+using namespace std;
+int main() {
+	int n,m;
+	cin >> n>>m;
+	if (n > m) {
+		swap(n, m);
+	}
+	for (int j = n; j <= m; j++) {
+		if (j == 1) {
+			continue;
+		}
+		bool is_prime = true;
+		for (int i = 2; i < j; i++) {
+			if (j % i == 0) {
+				is_prime = false;
+				cout << j << " NOT PRIME" << endl;
+				break;
+		   }
+		}
+		if (is_prime == true) {
+			cout << j << " PRIME"<<endl;
+		}
+	}
+	return 0;
+}
