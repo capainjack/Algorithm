@@ -1,0 +1,89 @@
+1.求三个整数的平均数
+int main() {
+	int a, b, c;
+	double d;
+	scanf("%d%d%d", &a, &b, &c);
+	d = (a + b + c) / 3;
+	printf("%.3f\n",d);
+	return 0;
+}
+
+2.输入华氏温度，输出相应的摄氏温度c
+int main() {
+	float f, c;
+	scanf("%f", &f);
+	c = 5 * (f - 32) / 9;
+	printf("%.3f\n", c);
+	return 0;
+}
+
+3.输入正整数，输出1+2+...+n的值
+int main() {
+	int n, a;
+	scanf("%d", &n);
+	a = (n + 1)*n / 2;
+	printf("%d\n", a);
+	return 0;
+}//目的是解决问题，而不是练习编程
+
+4.输入正整数n（n<360），输出n度的正弦、余弦函数值
+int main() {
+	double s,c,p;
+	const double pi = acos(-1.0);
+	int n;
+	scanf("%d", &n);
+	if (n < 360) {
+		p = n * (pi / 180);
+		s = sin(p);
+		c = cos(p);
+	}
+	else {
+		return ;
+	}
+	printf("%.3f %.3f\n", s,c);
+	return 0;
+}
+要注意sin和cos里的变量应该是弧度制 1°=Π/180 rad
+
+5.一件衣服95元，若消费满300元，可打85折。输入购买衣服件数，输出需要支付的金额，保留两位小数
+int main() {
+    int n = 95;
+    int num;
+    scanf("%d", &num);
+    if (num <= 3) {
+        printf("%d\n", n * num);
+    }
+    else
+        printf("%.2f\n", n * num * 0.85);
+    return 0;
+}
+
+6.输入三角形3条变的长度值，判断是否能为直角三角形的3个边长。如果可以，输出yes；如果不能，则输出no。
+如果无法构成三角形，输出not a triangle。
+int main() {
+    int a, b, c;
+    scanf("%d%d%d", &a, &b, &c);
+    if (a + b < c) { printf("not a triangle"); }
+    else if (a + c < b) { printf("not a triangle"); }
+    else if(b+c<a) { printf("not a triangle"); }
+    else if (a ^ 2 + b ^ 2 == c ^ 2) { printf("yes"); }
+    else if (a ^ 2 + c ^ 2 == b ^ 2) { printf("yes"); }
+    else if(b ^ 2 + c ^ 2 == a ^ 2) { printf("yes"); }
+    else { printf("no"); }
+    return 0;
+}
+
+7.输入年份，判断是否为闰年。如果是，则输出yes，否则输出no。
+int main() {
+    //闰年判断方法 1：能被四整除并且不能被100整除  2：能被400整除的是闰年
+    int n;
+    scanf("%d", &n);
+    if (n % 4 == 0 && n % 100 != 0) {
+        printf("yes");
+    }
+    else if (n % 400 == 0) {
+        printf("yes");
+    }
+    else { printf("no"); }
+    return 0;
+}
