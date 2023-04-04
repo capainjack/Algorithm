@@ -1,0 +1,103 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+关于一些stl
+#include<iostream>
+#include<vector>
+#include<iterator>
+#include<set>
+
+using namespace std;
+int main() {
+	vector<int> std;
+	vector<vector<int> > std;//二维数组
+	vector<int> std[100];//二维数组
+	std[1];
+	vector<int> ::iterator it;
+}
+
+
+int main() {
+	vector<int> vi;
+	for (int i = 1; i <= 5; i++) {
+		vi.push_back(i);
+	}
+	vector<int> ::iterator it =vi.begin();
+	for (int i = 0; i < 5; i++) {
+		printf("%d ", *(it + i));
+	}
+	return 0;
+}
+int main() {
+	vector<int>vi;
+	vi.push_back(10);
+	vi.push_back(20);
+	vi.push_back(30);
+	vi.push_back(40);
+	vector<int> ::iterator ibegin = vi.begin();
+	vector<int> ::iterator iend = vi.end();
+	while (ibegin != iend) {
+		printf("%d ", *(ibegin));
+        ibegin++;
+	}
+	return 0;
+}
+
+int main() {
+	vector<int>vi;
+
+	for (int i = 1; i <= 3; i++) {
+		vi.push_back(i);
+	}
+	for (int i = 0; i < vi.size(); i++) {
+		printf("%d ", vi[i]);
+	}
+	return 0;
+}
+
+int main() {
+	vector<int>vi;
+
+	for (int i = 1; i <= 3; i++) {
+		vi.push_back(i);
+	}
+	vi.pop_back();
+	for (int i = 0; i < vi.size(); i++) {
+		printf("%d ", vi[i]);
+	}
+	return 0;
+}
+
+int main() {
+	vector<int>vi;
+	for (int i = 1; i <= 5; i++) {
+		vi.push_back(i);
+	}
+	vi.insert(vi.begin() + 2, -1);
+	for(int i=0;i<vi.size();i++){
+		printf("%d ", vi[i]);
+	}
+	printf("数组的大小是 %d", vi.size());
+	return 0;
+}
+int main() {
+
+	set<int>st;
+	st.insert(3);
+	st.insert(5);
+	st.insert(2);
+	st.insert(3);
+	st.insert(4);
+
+	for (set<int>::iterator it = st.begin(); it != st.end(); it++) {
+		printf("%d ", *it);
+	}
+	return 0;
+}
+int main() {
+	set<int>st;
+	st.insert(10);
+	st.insert(20);
+	set<int>::iterator it = st.find(30);
+	printf("%d ", *it);
+	return 0;
+}
