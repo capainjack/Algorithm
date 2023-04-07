@@ -1,0 +1,72 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string>
+#include<iostream>
+#include<set>
+#include<iterator>
+using namespace std;
+
+//const int months[] = {
+//	0,31,28,31,30,31,30,31,31,30,31,30,31
+//};
+//bool check(string str) {
+//	for (int i = 1; i + 2 < str.size(); i++) {
+//		if (str[i + 1] == str[i] + 1 && str[i + 2] == str[i] + 2)
+//			return true;
+//
+//
+//		return false;
+//	}
+//}
+//int main() {
+//	int year = 2022;
+//	int months = 1;
+//	int day = 1;
+//	int res = 0;
+//	for (int i = 0; i <= 365; i++) {
+//		char str[10];
+//		sprintf(str, "%04d%02d%02d", year, months, day);
+//		if (check(str)) {
+//			res++;
+//			cout << str << endl;
+//		}
+//		if (++day > months) {
+//			months++;
+//		}
+//	}
+//	printf("%d\n", res);
+//	return 0;
+//}
+//int f(int x) {
+//	if (x == 1) return 1;
+//	if (x == 2) return 1;
+//	if (x > 2) return f(x - 1) + f(x - 2);
+//}
+//int main() {
+//	int n;
+//	scanf("%d", &n);
+//	int res = f(n);
+//	printf("%d\n",res);
+//	return 0;
+//  }
+
+
+int main() {
+	int a[100];
+	set<int> st;
+	int n,c;
+	scanf("%d", &n);
+	for (int i = 1; i <= n; i++) {
+		scanf("%d", &c);
+		st.insert(c);
+	}
+	set<int>::iterator it = st.begin();
+	for (int i = 0; i < n; i++) {
+		a[i] = *it;
+		it++;
+	}
+	for (int i = 0; i < n; i++) {
+		printf("%d ", a[i]);
+	}
+	return 0;
+}
